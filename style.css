@@ -1,0 +1,861 @@
+
+body {
+    background: #dcebdc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header {
+    position: relative;
+    background: #08703b;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    padding: 20px 7%;
+    display: flex;  
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 27px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+header .logo img {
+    width: 50px;
+}
+
+#menu-bar,
+#submenu-toggle {
+    display: none;
+}
+
+header label {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    display: block;
+}
+
+header .navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #08703b;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#menu-bar:checked ~ .navbar {
+    display: block;
+}
+
+header .navbar ul {
+    list-style: none;
+}
+
+header .navbar ul li {
+    position: relative;
+}
+
+header .navbar ul li a,
+header .navbar .submenu-label {
+    font-size: 18px;
+    padding: 15px 20px;
+    color: white;
+    display: block;
+    cursor: pointer;
+}
+
+header .navbar ul li a:hover,
+header .navbar .submenu-label:hover {
+    background: #07572f;
+}
+
+header .navbar ul li ul.submenu {
+    display: none;
+    position: static;
+    width: 100%;
+    background: #076f3a;
+}
+
+#submenu-toggle:checked + .submenu-label + ul.submenu {
+    display: block;
+}
+
+header .navbar ul li ul.submenu a {
+    padding-left: 40px;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 50px 7%;
+    background: #dcebdc;
+}
+
+.top-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.top-image img {
+    display: block;
+    width: 75%;
+    height: auto;
+    object-fit: cover;
+    border: 4px solid #076f3a;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+}
+
+.top-text {
+    text-align: center;
+    max-width: 800px;
+}
+
+.top-text h1 {
+    color: #07572f;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.top-text p {
+    font-size: 18px;
+}
+
+.numbers {
+    text-align: center;
+    background-color: #076f3a;
+    color: white;
+    padding: 40px;
+}
+
+.numbers h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.numbers h3 {
+    font-size: 45px;
+    margin: 15px 0;
+}
+
+.numbers p {
+    font-size: 17px;
+}
+
+.information,
+.paragraph1 {
+    margin: 35px auto;
+    padding: 30px;
+    width: 86%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+    text-align: center;
+}
+
+.paragraph1 h2,
+.information h2 {
+    color: #08703b;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.paragraph1 p {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.paragraph1 h2 {
+    color: black;
+    font-size: 15px;
+}
+
+.paragraph1 img {
+    border: 4px solid #076f3a;
+    border-radius: 30px;
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: stretch;
+}
+
+.cards .card {
+    flex: 1;
+    min-width: 0;
+    background: #e8f2e8;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 0;
+    text-align: left;
+}
+
+.cards .card h3 {
+    color: #07572f;
+    margin-bottom: 0;
+    font-size: 21px;
+}
+
+.cards .card p {
+    font-size: 16px;
+    flex-grow: 1;
+}
+
+.button {
+    display: inline-block;
+    background: #08703b;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button:hover {
+    background: #054323;
+}
+
+.cards .card .button {
+    margin-top: auto;
+}
+
+.issueHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: #dcebdc;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.issueHeader img {
+    display: block;
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+    border: 4px solid #076f3a;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+}
+
+.issueHeader h1,
+#Support-header {
+    background: #076f3a;
+    color: white;
+    border-radius: 5px;
+    margin: 35px auto;
+    padding: 30px;
+    width: 86%;
+    font-size: 28px;
+    border: 3px solid black;
+    text-align: center;
+}
+
+.Why {
+    background-color: white;
+    padding: 30px;
+    margin: 40px;
+    border-radius: 30px;
+}
+
+.Why h2 {
+    color: #07572f;
+}
+
+#title1 {
+    margin: 50px;
+    background-color: #076f3a;
+    padding: 30px;
+    border-radius: 30px;
+    color: white;
+    display: flex;
+}
+
+.examples {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    gap: 20px;
+    margin-top: 20px;
+    background: white;
+}
+
+.causes {
+    background-color: white;
+    border-radius: 30px;
+    padding: 5px 20px 10px;
+    margin: 30px;
+}
+
+.causes-title {
+    align-items: center;
+    color: #07572f;
+}
+
+.information2 {
+    margin: 30px;
+}
+
+.information img {
+    width: 100px;
+    height: auto;
+}
+
+#paragraph2 {
+    margin: 30px;
+    gap: 40px;
+}
+
+.cards2 {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.cards2 .card {
+    background: #e8f2e8;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    margin: 0 0 15px;
+    text-align: left;
+}
+
+.cards2 .card img {
+    width: 250px;
+    max-width: 35%;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 2px solid #07572f;
+}
+
+.cards2 .card-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.cards2 .card h3 {
+    color: #07572f;
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.cards2 .card p {
+    font-size: 16px;
+}
+
+.palm-oil {
+    margin: 30px;
+}
+
+.palm-oil img {
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    border: 2px solid #07572f;
+}
+
+#actions-header {
+    color: black;
+}
+
+.paper-waste,
+.products,
+.native-trees {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 86%;
+    margin: 35px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 30px;
+}
+
+.paper-waste {
+    flex-direction: row;
+}
+
+.products {
+    flex-direction: row;
+}
+
+.native-trees {
+    flex-direction: row;
+}
+
+.things-to-do {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.paper-waste img,
+.products img {
+    width: 40%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    border: 4px solid #07572f;
+    flex-shrink: 0;
+}
+
+.native-trees img {
+    width: 60%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    border: 4px solid #08703b;
+    flex-shrink: 0;
+}
+
+.paper-waste-text,
+.products-text,
+.native-trees-text {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.paper-waste-text h1,
+.products-text h1,
+.native-trees-text h1 {
+    color: #08703b;
+    font-size: 28px;
+}
+
+.paper-waste-text p,
+.products-text p,
+.native-trees-text p {
+    font-size: 17px;
+}
+
+.support-top {
+    background-color: white;
+    margin: 30px;
+    padding: 20px;
+    border: 3px solid black;
+    text-align: center;
+    display: block;
+}
+
+.support-top h2 {
+    color: #076f3a;
+}
+
+.organizations {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 86%;
+    margin: 35px auto;
+}
+
+.Wwf,
+.rainforest-alliance,
+.FSC,
+.forest-and-bird {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 30px;
+    background: white;
+    border-radius: 30px;
+    border: 4px solid #076f3a;
+}
+
+.organizations img {
+    width: 30%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    border: 4px solid black;
+    flex-shrink: 0;
+    padding: 10px;
+}
+
+.Wwf-text,
+.rainforest-alliance-text,
+.FSC-text,
+.forest-and-bird-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.organizations h1 {
+    color: #08703b;
+    font-size: 28px;
+}
+
+.organizations p {
+    font-size: 17px;
+}
+
+.about {
+    background-color: white;
+    margin: 30px;
+    padding: 40px;
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.about img {
+    margin-top: 30px;
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #076f3a;
+    border-radius: 30px;
+}
+
+.contact {
+    background: white;
+    width: 86%;
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+}
+
+.contact h1 {
+    background: #076f3a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact label {
+    color: #07572f;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 13px;
+    border: 2px solid #c5d8c7;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f8fbf8;
+}
+
+.contact textarea {
+    resize: vertical;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: #08703b;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.form-buttons button {
+    flex: 1;
+    padding: 13px;
+    background: #08703b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-buttons button:hover {
+    background: #054323;
+}
+
+.form-buttons .reset-button {
+    background: #e8f2e8;
+    color: #07572f;
+    border: 2px solid #08703b;
+}
+
+.form-buttons .reset-button:hover {
+    background: #dcebdc;
+}
+footer{
+background-color: #07572f;
+color: white;
+text-align: center;
+}
+footer a, footer img {
+    color: white;
+    text-decoration: none;
+    padding-top: 35px;
+    padding-right: 15px;
+
+}
+
+
+.fa-brands {
+    font-size: 40px;
+    color: white;
+}
+
+
+@media (max-width: 430px) {
+    header {
+        padding: 12px 5%;
+    }
+
+    header .logo {
+        font-size: 20px;
+    }
+
+    header .logo img {
+        width: 40px;
+    }
+
+    header label {
+        font-size: 18px;
+    }
+
+    .top {
+        padding: 30px 5%;
+        gap: 20px;
+    }
+
+    .top-image img {
+        width: 100%;
+    }
+
+    .top-text h1 {
+        font-size: 28px;
+    }
+
+    .top-text p {
+        font-size: 16px;
+    }
+
+    .numbers {
+        padding: 25px 15px;
+    }
+
+    .numbers h2 {
+        font-size: 30px;
+    }
+
+    .numbers h3 {
+        font-size: 36px;
+    }
+
+    .information,
+    .paragraph1 {
+        width: 92%;
+        padding: 20px;
+        margin: 25px auto;
+    }
+
+    .information h2 {
+        font-size: 24px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .cards .card {
+        width: 100%;
+    }
+
+    .cards2 .card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+    }
+
+    .cards2 .card img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .issueHeader img {
+        width: 90%;
+    }
+
+    .issueHeader h1,
+    #Support-header {
+        width: 90%;
+        padding: 20px;
+        font-size: 25px;
+    }
+
+    .Why {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    #title1 {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .examples {
+        flex-direction: column;
+    }
+
+    .causes {
+        margin: 15px;
+    }
+
+    #paragraph2 {
+        margin: 15px;
+        gap: 20px;
+    }
+
+    .paper-waste,
+    .products,
+    .native-trees,
+    .Wwf,
+    .rainforest-alliance,
+    .FSC,
+    .forest-and-bird {
+        flex-direction: column;
+        width: 92%;
+        margin: 25px auto;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .paper-waste img,
+    .products img,
+    .native-trees img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .paper-waste-text h1,
+    .products-text h1,
+    .native-trees-text h1 {
+        font-size: 24px;
+    }
+
+    .organizations {
+        width: 92%;
+    }
+
+    .organizations img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .about h1 {
+        font-size: 36px;
+        margin-bottom: 25px;
+    }
+
+    .contact {
+        width: 92%;
+        padding: 20px;
+    }
+
+    .contact h1 {
+        font-size: 27px;
+        padding: 20px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    footer {
+        padding: 20px 10px;
+    }
+
+    footer a {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    .fa-brands {
+        font-size: 30px;
+        text-decoration: none;
+    }
+}
